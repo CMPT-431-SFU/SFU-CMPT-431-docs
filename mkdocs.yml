@@ -1,0 +1,88 @@
+#=========================================================================
+# mkdocs Configuration
+#=========================================================================
+
+site_name: "SFU CMPT 431 Parallel and Distributed Systems"
+site_author: "Arrvindh Shriraman"
+
+# Repository
+
+repo_name: "SFU-CMPT-431/SFU-CMPT-431-docs"
+repo_url: "https://github.com/SFU-CMPT-431/SFU-CMPT-431-docs"
+
+# Copyright
+
+copyright: "Copyright for original site &copy; 2018 Christopher Batten"
+
+# Configuration
+
+theme:
+  name: "material"
+  custom_dir: "theme/"
+  language: "en"
+  favicon: "img/favicon.ico"
+  #  font:
+  #    text: 'Ubuntu'
+  #    code: 'Ubuntu Mono'
+  palette:
+    primary: "blue"
+    accent: "indigo"
+  feature:
+    tabs: true
+
+# Extensions
+
+markdown_extensions:
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite:
+      linenums: true
+
+# Extras
+
+extra_css:
+  - "stylesheets/extra.css"
+
+extra_javascript:
+  - "js/extras.js"
+
+# Pages
+
+nav:
+  #  - Misc Documentation:
+  #     - 'PA Assessment Rubric': SFU-CMPT-431-pa-rubric.md
+  #     - 'PA Coding Guidelines': SFU-CMPT-431-pa-coding-guidelines.md
+  #     - 'Example Outline for PA1 Report': SFU-CMPT-431-pa1-outline.md
+
+  - Topic Notes:
+      - "Topic 1: Introduction to C": SFU-CMPT-431-T01-intro-c.md
+
+  #     - 'Topic 2: C Recursion': SFU-CMPT-431-T01-recursion-notes.md
+
+  - Section Notes:
+      - "Section 1: Linux Development Environment": SFU-CMPT-431-sec1-linux.md
+      - "Section 2: Compiling and Running C Programs": SFU-CMPT-431-sec2-c-basics.md
+      - "Section 3: C Build and Test Frameworks": SFU-CMPT-431-sec3-c-build-test.md
+      - "Section 4: C Testing and Debugging": SFU-CMPT-431-sec4-c-test-debug.md
+#     - 'Section 5: C Profiling for Performance and Memory Usage': SFU-CMPT-431-sec5-c-profiling.md
+
+# Next year make linux/git a single tutorial!
+
+#  - Tutorials:
+#     - 'Tutorial 1: Linux and Git': SFU-CMPT-431-tut1-linux-git.md
+#     - 'Tutorial 3: Compiling and Running C Programs': SFU-CMPT-431-tut2-c-basics.md
+#     - 'Tutorial 4: C Build and Test Frameworks': SFU-CMPT-431-tut3-c-build-test.md
+#     - 'Tutorial 5: C Debugging and Verification': SFU-CMPT-431-tut4-c-debug-verif.md
+#     - 'Tutorial 6: C Profiling for Performance and Memory Usage': SFU-CMPT-431-tut5-c-profiling.md
+
+#  - Programming Assignments:
+#     - 'PA1: Math Functions': SFU-CMPT-431-pa1-math.md
+#     - 'PA2: List and Vector Data Structures': SFU-CMPT-431-pa2-dstruct.md
+#     - 'PA3: Sorting Algorithms': SFU-CMPT-431-pa3-algo.md
+#     - 'PA4: Polymorphic Data Structures and Algorithms': SFU-CMPT-431-pa4-poly.md
+#     - 'PA5: Handwriting Recognition System': SFU-CMPT-431-pa5-sys.md
+
+#  - FAQ:
+#    - 'FAQ on C Basics': SFU-CMPT-431-faq-c-basics.md
