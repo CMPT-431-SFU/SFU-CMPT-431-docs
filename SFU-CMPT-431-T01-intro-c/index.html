@@ -1,0 +1,2749 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+        <meta name="author" content="Arrvindh Shriraman">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Topic 1: Introduction to C - SFU CMPT 431 Parallel and Distributed Systems</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#topic-1-introduction-to-c" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="SFU CMPT 431 Parallel and Distributed Systems" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              SFU CMPT 431 Parallel and Distributed Systems
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Topic 1: Introduction to C
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/SFU-CMPT-431/SFU-CMPT-431-docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SFU-CMPT-431/SFU-CMPT-431-docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Topic Notes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../SFU-CMPT-431-sec1-linux/" class="md-tabs__link">
+          Section Notes
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="SFU CMPT 431 Parallel and Distributed Systems" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SFU CMPT 431 Parallel and Distributed Systems
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/SFU-CMPT-431/SFU-CMPT-431-docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SFU-CMPT-431/SFU-CMPT-431-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Topic Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Topic Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Topic 1: Introduction to C
+      </label>
+    
+    <a href="./" title="Topic 1: Introduction to C" class="md-nav__link md-nav__link--active">
+      Topic 1: Introduction to C
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-statements-syntax-semantics-state" class="md-nav__link">
+    1. Statements, Syntax, Semantics, State
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-variables-literals-operators-expressions" class="md-nav__link">
+    2. Variables, Literals, Operators, Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-variables" class="md-nav__link">
+    2.1. Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-literals" class="md-nav__link">
+    2.2. Literals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-operators" class="md-nav__link">
+    2.3. Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-expressions" class="md-nav__link">
+    2.4. Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-simple-c-program" class="md-nav__link">
+    2.5. Simple C Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-blocks-scope-name-binding" class="md-nav__link">
+    3. Blocks, Scope, Name Binding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-blocks" class="md-nav__link">
+    3.1 Blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-scope" class="md-nav__link">
+    3.2 Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-name-binding" class="md-nav__link">
+    3.3 Name Binding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-functions" class="md-nav__link">
+    4. Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-function-definition" class="md-nav__link">
+    4.1. Function Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-function-call" class="md-nav__link">
+    4.2. Function Call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-the-printf-function" class="md-nav__link">
+    4.3. The printf Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conditional-statements" class="md-nav__link">
+    5. Conditional Statements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-boolean-operators" class="md-nav__link">
+    5.1. Boolean Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ifelse-conditional-statements" class="md-nav__link">
+    5.2. if/else Conditional Statements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-switchcase-conditional-statements" class="md-nav__link">
+    5.3. switch/case Conditional Statements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-iteration-statements" class="md-nav__link">
+    6. Iteration Statements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-while-loops" class="md-nav__link">
+    6.1. while Loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-for-loops" class="md-nav__link">
+    6.2. for Loops
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-syntactic-sugar" class="md-nav__link">
+    7. Syntactic Sugar
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Section Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Section Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SFU-CMPT-431-sec1-linux/" title="Section 1: Linux Development Environment" class="md-nav__link">
+      Section 1: Linux Development Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SFU-CMPT-431-sec2-c-basics/" title="Section 2: Compiling and Running C Programs" class="md-nav__link">
+      Section 2: Compiling and Running C Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SFU-CMPT-431-sec3-c-build-test/" title="Section 3: C Build and Test Frameworks" class="md-nav__link">
+      Section 3: C Build and Test Frameworks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SFU-CMPT-431-sec4-c-test-debug/" title="Section 4: C Testing and Debugging" class="md-nav__link">
+      Section 4: C Testing and Debugging
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-statements-syntax-semantics-state" class="md-nav__link">
+    1. Statements, Syntax, Semantics, State
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-variables-literals-operators-expressions" class="md-nav__link">
+    2. Variables, Literals, Operators, Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-variables" class="md-nav__link">
+    2.1. Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-literals" class="md-nav__link">
+    2.2. Literals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-operators" class="md-nav__link">
+    2.3. Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-expressions" class="md-nav__link">
+    2.4. Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-simple-c-program" class="md-nav__link">
+    2.5. Simple C Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-blocks-scope-name-binding" class="md-nav__link">
+    3. Blocks, Scope, Name Binding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-blocks" class="md-nav__link">
+    3.1 Blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-scope" class="md-nav__link">
+    3.2 Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-name-binding" class="md-nav__link">
+    3.3 Name Binding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-functions" class="md-nav__link">
+    4. Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-function-definition" class="md-nav__link">
+    4.1. Function Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-function-call" class="md-nav__link">
+    4.2. Function Call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-the-printf-function" class="md-nav__link">
+    4.3. The printf Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conditional-statements" class="md-nav__link">
+    5. Conditional Statements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-boolean-operators" class="md-nav__link">
+    5.1. Boolean Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ifelse-conditional-statements" class="md-nav__link">
+    5.2. if/else Conditional Statements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-switchcase-conditional-statements" class="md-nav__link">
+    5.3. switch/case Conditional Statements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-iteration-statements" class="md-nav__link">
+    6. Iteration Statements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-while-loops" class="md-nav__link">
+    6.1. while Loops
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-for-loops" class="md-nav__link">
+    6.2. for Loops
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-syntactic-sugar" class="md-nav__link">
+    7. Syntactic Sugar
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/SFU-CMPT-431/SFU-CMPT-431-docs/edit/master/docs/SFU-CMPT-431-T01-intro-c.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="topic-1-introduction-to-c">Topic 1: Introduction to C<a class="headerlink" href="#topic-1-introduction-to-c" title="Permanent link">&para;</a></h1>
+<p>This topic will provide a gentle introduction to the basics of procedural
+programming using the C programming language. C has a long history of use
+in <em>computer systems programming</em> which involves developing software to
+connect the low-level computer hardware to high-level, user-facing
+application software. Computer systems programming usually requires
+careful consideration of performance and resource constraints. Examples
+of computer systems software include compilers, operating systems,
+databases, numerical libraries, and embedded controllers. C was developed
+in the early 1970s at Bell Laboratories by Ken Thompson, Dennis Ritchie,
+and many others. C was originally developed for the purposes of writing
+an early version of the Unix operating system. The Linux operating system
+which you will be using in the programming assignments was inspired by
+these original versions of Unix, and the Linux kernel is also written in
+C. C provides a nice balance between high-level abstractions for
+productive software development and low-level control over the hardware,
+and thus it remains one of the primary languages chosen by computer
+systems programmers.</p>
+<p>We will assume students have taken an introductory programming course in
+a dynamic programming language (e.g., Python, MATLAB). This means we are
+assuming students are familiar with basic programming constructs such as
+variables, literals, operators, expressions, functions, conditional
+statements, and iteration statements. Therefore this topic will focus
+more on the specifics of C syntax and a precise way of illustrating
+execution semantics which we will use throughout the rest of the course.
+We will also start by focusing more on (precisely) <em>reading</em> C programs
+than on <em>writing</em> C programs. Just as when learning a foreign language,
+one must learn how to read before one can learn how to write!</p>
+<h2 id="1-statements-syntax-semantics-state">1. Statements, Syntax, Semantics, State<a class="headerlink" href="#1-statements-syntax-semantics-state" title="Permanent link">&para;</a></h2>
+<p>At a fundamental level, any procedural program can be defined by the four
+S's: statements, syntax, semantics, and state. The following diagram
+illustrates the interaction between the four S's.</p>
+<p><img alt="" src="../img/T01-execution-model.png" /></p>
+<p>Let's start with an example based on the English language. A <em>program</em> is
+a sequence of statements. For example the following might be an English
+language program:</p>
+<ol>
+<li>Put the letter in the envelope.</li>
+<li>Seal the envelope.</li>
+<li>Address the envelope.</li>
+<li>Put a stamp on the envelope.</li>
+<li>Put the envelope in the mailbox.</li>
+</ol>
+<p>In this context, a <em>statement</em> is just an English language sentence. For
+example, "Put the letter in the envelope." is a statement. The <em>syntax</em>
+is the proper English language grammar required for forming valid
+sentences. For example, syntax tells us that the first word of a
+statement should start with a capital letter, that a verb should have
+proper tense, and a statement should end with an appropriate choice of
+punctuation. The <em>semantics</em> is the meaning of a sentence. For example,
+semantics tells us that a letter is a "written, typed, or printed
+communication, especially one sent in an envelope by mail or messenger",
+and the semantics also help us understand that putting a letter in an
+envelope makes sense. The statement "Put the elephant in the envelope."
+would be syntactically correct but would not make much semantic sense.
+Finally, the <em>state</em> involves the memory of prior statements (i.e., the
+state of the world) as we read or "execute" these statements. To execute
+a statement, we use the syntax and semantics to understand how that
+statement changes the state of the world. The "execution arrow" points to
+the current statement we are reading or executing. So in this example,
+the state captures the current status of the envelope. Is the envelope
+sealed? Is it addressed? Does it have a stamp on it? Is it in the
+mailbox? Here is a quick summary of the four S's:</p>
+<ul>
+<li><strong>Program</strong>: sequence of statements</li>
+<li><strong>Statement</strong>: sentence</li>
+<li><strong>Syntax</strong>: sentence grammar</li>
+<li><strong>Semantics</strong>: sentence meaning</li>
+<li><strong>State</strong>: memory of prior statements</li>
+</ul>
+<p>When executing a program we often want to be more precise on exactly how
+a program's syntax and semantics modify the state. We will use <em>state
+diagrams</em> as a way to capture a program's execution precisely. Although
+drawing these diagrams may initially seem overly tedious, it is critical
+that students master this skill early. By the end of the course we will
+be drawing very complicated state diagrams to <em>precisely</em> demonstrate our
+understanding of the syntax and semantics of sophisticated programming
+paradigms; but this is only possible if students work on mastering this
+skill right from the beginning of the course.</p>
+<p>The following is an example of a state diagram for executing a simple
+English program with five statements.</p>
+<p><img alt="" src="../img/T01-english-program.png" /></p>
+<p>Each statement includes a prefix with a line number and small set of
+boxes, and there is space on the right to capture the state of the
+program. To execute this program, we simply use the following steps:</p>
+<ol>
+<li>Identify which statement the execution arrow is pointing to</li>
+<li>Use the syntax and semantics to understand how this
+     statement will change the state</li>
+<li>Update the state accordingly using the space on the right</li>
+<li>Cross off the box to the left of this statement</li>
+<li>Advance the execution arrow to point to the next statement</li>
+</ol>
+<p>While we have explored statements, syntax, semantics, and state in the
+context of an English language program, our understanding applies equally
+well to computer languages. In the rest of this topic, we will learn the
+basics about statements, syntax, semantics, and state in the C
+programming language.</p>
+<h2 id="2-variables-literals-operators-expressions">2. Variables, Literals, Operators, Expressions<a class="headerlink" href="#2-variables-literals-operators-expressions" title="Permanent link">&para;</a></h2>
+<p>We begin by exploring the statements, syntax, semantics, and state
+associated with four fundamental C concepts: variables, literals,
+operators, and expressions.</p>
+<ul>
+<li><strong>Variable</strong>: a box (in the computer's memory) which stores a value</li>
+<li><strong>Literal</strong>: value written exactly as it is meant to be interpreted</li>
+<li><strong>Operator</strong>: symbol with special semantics to "operate" on variables
+     and literals</li>
+<li><strong>Expression</strong>: combination of variables, literals, and operators
+     which evaluates to a new value</li>
+</ul>
+<h2 id="21-variables">2.1. Variables<a class="headerlink" href="#21-variables" title="Permanent link">&para;</a></h2>
+<p>A variable is a box in the computer's memory which stores a value. It is
+critical to keep the concept of a variable separate from the concept of a
+value. A variable is <em>not</em> a value. A variable <em>stores</em> a value. The name
+of a variable is called its <em>identifier</em>. In C, identifiers can include
+lowercase letters, uppercase letters, numbers, and underscores. However,
+identifiers cannot start with a number. Identifiers also cannot be
+<em>keywords</em> which are reserved words that have special meaning within the
+C programming language. These rules are part of the C syntax for
+identifiers. The following is a list of valid identifiers (i.e., correct
+syntax):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>my_variable
+MY_VARIABLE
+myVariable
+MyVariable
+variable_0
+variable_1
+_variable
+__variable__
+</pre></div>
+</td></tr></table>
+
+<p>The following is a list of invalid identifiers (i.e., incorrect syntax):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>0_variable
+variable$1
+</pre></div>
+</td></tr></table>
+
+<p>The first identifier has invalid C syntax since it starts with a number,
+and the second identifier has invalid C syntax since it includes the <code>$</code>
+character. These are called <em>syntax errors</em>.</p>
+<p>There are many styles of identifiers. For example, <em>snakecase</em> favors
+using lowercase with underscores to separate words (i.e., <code>my_variable</code>),
+while <em>camelcase</em> favors using lowercase with uppercase to separate words
+(i.e., <code>myVariable</code>, <code>MyVariable</code>). Often we might favor using uppercase
+with underscores to indicate constant variables (i.e., <code>MY_VARIABLE</code>),
+and we might favor using leading and training underscores to indicate
+special internal variables (i.e., <code>__variable__</code>). Note that the C
+compiler does not care about which valid identifier a programmer uses to
+name any given variable. So why not simply name each variable <code>a0</code>, <code>a1</code>,
+<code>a2</code>, etc? While the C compiler does not care, the <em>reader</em> of your
+program <em>definitely</em> cares about which valid identifiers a programmer
+uses. Careful and consistent selection of identifiers can significantly
+improve the readability of your programs, which in turn makes your
+programs easier to debug, maintain, and extend. It is also important to
+note that in practical situations the programmer actually does not get to
+choose his or her own coding style (or coding conventions). A company or
+open-source project will usually have its own coding conventions that it
+expects its developers to follow. Similarly, in this course we have our
+own coding conventions that we expect students to follow. The coding
+conventions are located here:</p>
+<ul>
+<li><a href="https://cornell-SFU-CMPT-431.github.io/ece2400-docs/ece2400-coding-conventions">https://cornell-SFU-CMPT-431.github.io/ece2400-docs/ece2400-coding-conventions</a></li>
+</ul>
+<p>All variables also have a <em>type</em>. The type specifies the kind of values
+that can be stored in a variable. In dynamically typed languages (e.g.,
+Python, MATLAB) the "types" of variables are not be known until run time
+(i.e., dynamically), while in statically typed languages (e.g., C, C++)
+the "types" of variables must be known at compile time (i.e.,
+statically). This is an absolutely critical distinction that also has
+fundamental implications with respect to the tension between
+productivity- vs. efficiency-level languages. We will learn more about C
+types in Topic 3. For now, we will only use variables of type <code>int</code> which
+can store signed integer values. Signed integers include zero, negative
+whole numbers, and positive whole numbers.</p>
+<p>We can now introduce our very first example of a C statement. A <em>variable
+declaration statement</em> is used to create a new variable with a specific
+name and type. The following is a list of valid variable declaration
+statements:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">my_variable</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">MY_VARIABLE</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">MyVariable</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">myVariable</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">variable_0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">variable_1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">_variable</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">__variable__</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Each statement creates a new box to hold a value of type <code>int</code>. As an
+aside, <code>int</code> is a keyword meaning that it cannot be used as an
+identifier for a variable. Note that C syntax requires all C statements
+to end in a semicolon. Forgetting to include the semicolon is a syntax
+error (meaning the C compiler cannot understand the syntax).</p>
+<details class="question"><summary>Activity 1: Valid vs. Invalid Identifiers</summary><p>Which of these identifiers are valid and which are invalid?</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>foo_bar
+42_foo_bar
+42-foo-bar
+_42_foo_bar
+FOO_BAR
+@FOO_BAR
+__FOO_BAR__
+foobarbaz
+fooBar%Baz
+fooBar_BazFoo
+m_foo
+_
+__
+int
+</pre></div>
+</td></tr></table>
+
+</details>
+<h2 id="22-literals">2.2. Literals<a class="headerlink" href="#22-literals" title="Permanent link">&para;</a></h2>
+<p>A literal is a value written exactly as it is meant to be interpreted.
+Contrast a literal to a variable. A variable is a name for a box that can
+hold many different values (all of the same type!). A constant variable
+is a name for a box that can hold a single (constant) value. A literal is
+not a name; it is not a variable. A literal is <em>literally</em> the value
+itself. Some example integer literals are shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>42
+-42
+0x42
+0xdeadbeef
+</pre></div>
+</td></tr></table>
+
+<p>The integer literal on line 1 is literally the number 13 in base 10. The
+integer literal on line 2 is literally the number -42 in base 10. The
+integer literal on line 3 is literally the number 42 in base 16 (i.e., 66
+in base 10). Finally, the integer literal on line 4 is literally a large
+number in base 16. Notice that C syntax specifies that by default integer
+literals are assumed to be base 10, but if the number includes a <code>0x</code>
+prefix then the integer literal is in base 16 (hexadecimal).</p>
+<details class="question"><summary>Activity 2: Hexadecimal Literals</summary><p>Calculate the decimal value of the following hexadecimal literals.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>0x13
+0x1000
+0xaa
+0xcafe
+</pre></div>
+</td></tr></table>
+
+</details>
+<h2 id="23-operators">2.3. Operators<a class="headerlink" href="#23-operators" title="Permanent link">&para;</a></h2>
+<p>An operator is a symbol with special semantics to "operate" on variables
+and literals. The very first operator we will study will be the
+<em>assignment operator</em> represented with the equal symbol (<code>=</code>). The
+assignment operator "assigns" a new value to a variable (i.e., puts a
+value into the variable's box).</p>
+<p>This brings us to our second example of a C statement. An <em>assignment
+statement</em> combines the assignment operator with a left-hand side (LHS)
+and a right-hand side (RHS). The LHS specifies the variable to change,
+and the RHS specifies the new value (possibly using a literal). An
+example of a program with two statements is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">my_variable</span><span class="p">;</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The first line is a variable declaration statement, and the second line
+is an assignment statement. The semantics are that the first statement
+creates a box in the computer's memory, and the second statement stores
+the value 13 in that box.</p>
+<p>A variable declaration statement and an assignment statement can be
+combined into a single <em>initialization statement</em>. An example of the same
+program implemented with a single statement is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">my_variable</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>We have now learned about three kinds of C statements: variable
+declaration statements, assignment statements, and initialization
+statements. It is important to distinguish between these three kinds of
+statements, especially since in C++ each of these three kinds of
+statements can result in quite different semantics.</p>
+<p>There are many other operators besides the assignment operator. For
+example, there are arithmetic operators for addition (<code>+</code>), subtraction
+(<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), and modulus (<code>%</code>).</p>
+<p>All of these operators can operate on integer values. We will discuss in
+Topic 3 subtle issues related to the fact that the computer can only
+represent integer values up to a specific minimum and maximum value. Note
+that the division operator (<code>/</code>) is for <em>integer</em> division meaning that 6
+/ 2 is 3 and 5 / 2 is 2 not 2.5. So the result of an integer division is
+always rounded towards zero, or in other words the fractional part is
+simply removed (truncated). Why does the C programming language round
+towards zero? Why not round to the nearest whole number? Again the C
+programming language is choosing efficiency; it is slightly more
+efficient to simply remove the fractional part vs other rounding schemes.</p>
+<details class="question"><summary>Activity 3: Integer Division and Modulus</summary><p>Calculate the result of applying the following integer division and
+modulus operators.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span> 15 / 2
+ 15 / 3
+ 15 / 4
+ 15 / 5
+-15 / 2
+-15 / 3
+-15 / 4
+-15 / 5
+ 15 % 2
+ 15 % 3
+ 15 % 4
+ 15 % 5
+</pre></div>
+</td></tr></table>
+
+</details>
+<h2 id="24-expressions">2.4. Expressions<a class="headerlink" href="#24-expressions" title="Permanent link">&para;</a></h2>
+<p>An expression is a combination of variables, literals, and operators
+which <em>evaluates</em> to a new value. A variable's identifier is itself an
+expression that evaluates to the value stored in that variable. An
+example of an expression is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>5 - 3
+</pre></div>
+</td></tr></table>
+
+<p>This expression evaluates to the value 2. Another example expression is
+shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>8 / 2 * 2 + 2
+</pre></div>
+</td></tr></table>
+
+<p>This expression can evaluate to different values depending on the order
+in which we apply the sequence of operators. Several options for how to
+evaluate this expression are shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>((8 / 2) * 2) + 2 evaluates to 10
+(8 / 2) * (2 + 2) evaluates to 16
+8 / (2 * (2 + 2)) evaluates to  1
+(8 / (2 * 2)) + 2 evaluates to  4
+8 / ((2 * 2) + 2) evaluates to  1
+</pre></div>
+</td></tr></table>
+
+<p>Note that the final expression evaluates to 1.33 but since this is the
+integer division we round towards zero resulting in a value of 1. The C
+programming language includes semantics to unambiguously specify the
+correct answer based on an operator precedence table. An initial version
+of this table which just includes the operators we have already learned
+about in this topic is shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Operator</th>
+<th>Associativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiplicative</td>
+<td><code>*</code> <code>/</code> <code>%</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Additive</td>
+<td><code>+</code> <code>-</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td><code>=</code></td>
+<td>right to left</td>
+</tr>
+</tbody>
+</table>
+<p>Early rows have higher precedence than lower rows. So the multiplicative
+operators have the highest precedence and then the additive operators.
+The associativity column indicates the order to apply the operators when
+those operators are at the same precedence. So for the above example, we
+first consider the multiplicative operators and then move from left to
+right applying those operators. So we apply the division operator first,
+then the multiplication operator, and finally the lower precedence
+addition operator:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>((8 / 2) * 2) + 2 = 10
+</pre></div>
+</td></tr></table>
+
+<p>Note that all operators are included in the precedence table, even the
+assignment operator. Since the assignment operator is the last row it has
+the lowest precedence. This means we evaluate the LHS and RHS of the
+assignment operator first before doing the actual assignment. An example
+is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x = 5 - 3
+</pre></div>
+</td></tr></table>
+
+<p>We apply the subtraction operator first and so the RHS evaluates to the
+value 2. Then we apply the assignment operator which sets the value of
+variable <code>x</code> to be 2. Note that every expression evaluates to a value,
+and since <code>x = 5 - 3</code> is an expression then it also evaluates to a value!
+The C programming language specifies that the value of applying the
+assignment operator is the value of the LHS. This enables complicated yet
+syntactically correct expressions such as:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>y = x = 5 - 3
+</pre></div>
+</td></tr></table>
+
+<p>As before, the addition operator has the highest precedence. The
+precedence table specifies that the corresponding associativity is right
+to left. This is what the expression would look like if we inserted
+according to the precedence table.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>y = (x = (5 - 3))
+</pre></div>
+</td></tr></table>
+
+<p>The expression <code>5 - 3</code> evaluates to 2, and the expression <code>x = 2</code>
+evaluates to the value 2 (with a side-effect of updating the variable
+<code>x</code>). In other words, this expression sets the value of both variable <code>x</code>
+and <code>y</code> to 2.</p>
+<p>One key take-away from this discussion is that while an expression might
+be syntactically correct, it doesn't mean that it is readable. We should
+always prefer explicitly using parenthesis to indicate the desired order
+of operations.</p>
+<details class="question"><summary>Activity 4: Operator Precedence</summary><p>Calculate the result of evaluating the following expressions.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>8 / 2 * 2 * 2
+8 / (2 * (2 * 2))
+8 / 2 + 2 * 2
+(8 / (2 + 2)) * 2
+x = 2
+x = 8 / 2
+</pre></div>
+</td></tr></table>
+
+</details>
+<h2 id="25-simple-c-program">2.5. Simple C Program<a class="headerlink" href="#25-simple-c-program" title="Permanent link">&para;</a></h2>
+<p>We can now compose assignment and initialization statements which use
+variables, literals, operators, and expressions to create our very first
+simple C program. Let's translate the English "program" we saw in Section
+1 into a C program.</p>
+<p><img alt="" src="../img/T01-simple-c-program-1.png" /></p>
+<p>To execute this program, we simply use the same steps we used before:</p>
+<ol>
+<li>Identify which statement the execution arrow is pointing to</li>
+<li>Use the syntax and semantics to understand how this
+     statement will change the state</li>
+<li>Update the state accordingly using the space on the right</li>
+<li>Cross off the box to the left of this statement</li>
+<li>Advance the execution arrow to point to the next statement</li>
+</ol>
+<p>This program uses a variable declaration statement to create a variable
+named <code>x</code> (line 1), uses an assignment statement to set the value of
+variable <code>x</code> to 5 (line 2), uses another variable declaration statement
+to create a variable named <code>y</code> (line 3), uses another assignment
+statement to set the value of variable <code>y</code> to 2 (line 4), uses another
+variable declaration statement to create a variable named <code>z</code> (line 5),
+and finally uses another assignment statement to set the value of
+variable <code>z</code> to the value of the expression <code>x - y</code> (line 6).</p>
+<p>Let's look at another simple C program that illustrates an issue with
+uninitialized variables.</p>
+<p><img alt="" src="../img/T01-simple-c-program-2.png" /></p>
+<p>Lines 1 and 2 are variable declaration statements that create boxes in
+our state diagram, but we do not assign a value to these boxes. These
+variables are called <em>uninitialized</em>. An uninitialized variable is not
+itself a problem. There is nothing syntactically or semantically wrong
+with lines 1 and 2. However, <em>using</em> an uninitialized variable does have
+undefined semantics. What does it mean for something to have undefined
+semantics? If something has undefined semantics it could: cause a compile
+time error message, cause a runtime error message, cause your program to
+crash, cause your program to hang forever, cause nothing wrong to happen,
+delete your hard drive, or crash your entire computer. So we should avoid
+doing anything which has undefined semantics. However, this begs the
+question, why does the C programming language even include undefined
+semantics? Why doesn't the C programming language specify that these
+uninitialized variables are automatically initialized to zero? This would
+certainly avoid undefined semantics and many common bugs. Recall that C
+is a computer systems programming language optimized for efficiency.
+Automatically initializing variables to zero would add a small but
+non-trivial overhead which could quickly have an impact on the overall
+performance of your programs. When faced with a choice between safety and
+efficiency, the C programming language will almost always choose
+efficiency. This is why it is an efficiency-level language! However, this
+also means that C programmers must be very careful in how they write
+their programs to avoid undefined behavior at all costs. This example
+also illustrates that sometimes you will need to include additional
+annotations to your state diagrams to explain the execution of a program.
+There is nothing wrong with including such additional annotations; the
+key is to make sure your state diagrams effectively capture your
+understanding of the program's execution.</p>
+<p>Let's look at one more simple C program that illustrates how values are
+copied between variables, and how we can assign new values to variables.</p>
+<p><img alt="" src="../img/T01-simple-c-program-3.png" /></p>
+<p>Line 4 uses an assignment statement to <em>copy</em> the value in variable <code>x</code>
+into the variable <code>y</code>. It is critical to remember, that assignment
+<em>copies</em> the actual value. It does not copy any kind of high-level
+reference as in some dynamic programming languages (e.g., Python). Line 5
+uses an assignment statement to update the value in variable <code>x</code>. Note
+that line 5 does <em>not</em> create a new variable named <code>x</code> (it is an
+assignment statement, not an initialization statement), and line 5 does
+<em>not</em> modify the value in variable <code>y</code> in any way (since variable <code>y</code>
+made a copy of the value 5). Also notice that we should never erase
+values in our state diagrams. Instead, you should simply cross out the
+old value and enter the new value. This way we can easily see how the
+state has changed over the execution of the program.</p>
+<details class="question"><summary>Activity 5: State Diagram for a Simple C Program</summary><p>Draw a state diagram corresponding to the execution of this program.
+Remember to check off the execution boxes as you execute each
+statement. When executing line 4, recall the operator precedence
+table discussed in Section 2.3.</p>
+<p><img alt="" src="../img/T01-simple-c-program-activity.png" /></p>
+</details>
+<h2 id="3-blocks-scope-name-binding">3. Blocks, Scope, Name Binding<a class="headerlink" href="#3-blocks-scope-name-binding" title="Permanent link">&para;</a></h2>
+<p>Blocks, scope, and name binding provide syntax and semantics to help
+manage more complex procedural programs.</p>
+<h3 id="31-blocks">3.1 Blocks<a class="headerlink" href="#31-blocks" title="Permanent link">&para;</a></h3>
+<p>A <em>block</em> is a compound statement, meaning it is a new kind of statement
+which is made up of a sequence of other statements. Blocks are indicated
+using curly braces. An open curly brace (<code>{</code>) is used to open a block,
+and a close curly brace (<code>}</code>) is used to close a block. Blocks will be
+critical for defining functions, conditional statements, and iteration
+statements. Two examples of blocks are shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{
+  int x = 2;
+  int y = x;
+};
+
+{
+  int z = 3;
+  z = z + 1;
+};
+</pre></div>
+</td></tr></table>
+
+<p>Since a block is itself a statement, it has a trailing semicolon.
+However, this semicolon is optional, and in practice it is usually
+omitted.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{
+  int x = 2;
+  int y = x;
+}
+
+{
+  int z = 3;
+  z = z + 1;
+}
+</pre></div>
+</td></tr></table>
+
+<h3 id="32-scope">3.2 Scope<a class="headerlink" href="#32-scope" title="Permanent link">&para;</a></h3>
+<p>The scope of a variable is the region of code where it is accessible.
+Blocks create new <em>local</em> scopes, and variables declared within a block
+are only accessible from within that block. An example of a simple C
+program which uses a block to create a local scope is shown below.</p>
+<p><img alt="" src="../img/T01-scope-1.png" /></p>
+<p>Notice that we have introduced some additional notation in our state
+diagram. We use an X on the right of a variable's box to indicate that
+this variable has gone out of scope and thus has been deallocated.</p>
+<p>Let's look at another example of using a block to create a local scope.</p>
+<p><img alt="" src="../img/T01-scope-2.png" /></p>
+<p>There is an error on line 6. We cannot access the value of variable <code>y</code>
+because variable <code>y</code> went out of scope (i.e., was deallocated) on line 5
+when the block closed. This would cause a compile time error.</p>
+<p>Blocks can be nested. Let's look at another example where we read and
+write variables in an outer block.</p>
+<p><img alt="" src="../img/T01-scope-3.png" /></p>
+<p>The variables <code>x</code> and <code>w</code> are accessed within the inner block, even
+though these variables were declared in outer blocks. The change to
+variable <code>w</code> persists even after the inner block closes (i.e., changes
+are not "undone" in any way).</p>
+<p>Notice that as we open new local scopes we gradually allocate variables
+from top to bottom in our state diagram, and then as we close local
+scopes we gradually deallocate these variables from bottom to top in our
+state diagram. The variables are allocated and deallocated as in a
+<em>stack</em>. In a stack of cards, we place cards on top of each other, and
+then we draw cards from the top. In a stack of cards the stack grows up
+and then "shrinks" down. In the C stack, the stack grows down and then
+"shrinks" up. We will start calling the space on the right of our state
+diagrams the "stack".</p>
+<details class="question"><summary>Activity 6: State Diagram for Nested Scope</summary><p>Draw a state diagram corresponding to the execution of this program.
+Remember to use an X to indicate when variables go out of scope and
+are thus deallocated.</p>
+<p><img alt="" src="../img/T01-nested-scope-activity.png" /></p>
+</details>
+<h3 id="33-name-binding">3.3 Name Binding<a class="headerlink" href="#33-name-binding" title="Permanent link">&para;</a></h3>
+<p>So far, all of our code examples have only had one variable with any
+given name. However, in large programs we will have to reuse the same
+variable name in different places. <em>Name binding</em> is the process of using
+well-defined rules to determine which variable declaration a specific
+variable name refers to. Note that in C, name binding happens at compile
+time. This means that we should be able to determine which variable
+declaration a specific variable name refers to based just on the code in
+our state diagrams (i.e., we should not need to use the runtime
+information in the stack).</p>
+<p>C does not allow two variables to have the same name in the same block.
+The following code is syntactically incorrect and will cause a compile
+time error:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int x = 3;
+int x = 3;
+</pre></div>
+</td></tr></table>
+
+<p>However, C does allow two variables to have the same name in different
+blocks.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{
+  int x = 3;
+  int y = x;
+}
+
+{
+  int x = 5;
+  int z = x;
+}
+</pre></div>
+</td></tr></table>
+
+<p>This makes sense, since the variable named <code>x</code> declared on line 2 has
+been deallocated by the time we reach the variable initialization
+statement on line 7. There is no ambiguity on which variable declaration
+for <code>x</code> is being referenced on lines 3 and 8.</p>
+<p>C also allows two variables to have the same name in nested scope.</p>
+<p><img alt="" src="../img/T01-name-binding-1.png" /></p>
+<p>In this case, there are two variables with the name <code>x</code> that are in scope
+at the same time. The variable named <code>x</code> declared on line 3 is said to
+<em>mask</em> the variable named <code>x</code> declared on line 1. There are also two
+places where <code>x</code> is being referenced: first on line 4, and then again on
+line 6. The name binding rules specify which variable named <code>x</code> is being
+referenced on lines 4 and 6. The name binding rule in C is follows:</p>
+<ol>
+<li>start from where the variable <code>x</code> is being read or written</li>
+<li>work backwards out of the blocks, through open curly braces</li>
+<li>the first declaration of variable <code>x</code> is the one to use</li>
+</ol>
+<p>It is like peeling an onion. We peel off each block one at a time until
+we find the first declaration of the variable <code>x</code>. In the above example,
+if we start on line 4, then we would immediately find a variable named
+<code>x</code> which was declared earlier in the same block. If we start on line 6,
+then we don't even need to worry about the variable named <code>x</code> on line 3
+since it has already gone out of scope.</p>
+<p>Let's look at another example with three variables named <code>x</code>.</p>
+<p><img alt="" src="../img/T01-name-binding-2.png" /></p>
+<p>The access to <code>x</code> on line 6 corresponds to the variable declared on line
+4, and the access to <code>x</code> on line 8 corresponds to the variable declared
+on line 7.</p>
+<p>Note that as with operator precedence, it is usually best if you develop
+your programs to avoid subtle name binding issues. Ideally, it should be
+obvious from reading your program which variable name refers to which
+variable declaration without needing to carefully consider the name
+binding rules.</p>
+<details class="question"><summary>Activity 7: State Diagram for Name Binding</summary><p>Draw a state diagram corresponding to the execution of this program.
+Remember to use an X to indicate when variables go out of scope and
+are thus deallocated. Use the name binding rules to determine which
+variable named <code>x</code> is being referenced on line 6, and which variable
+named <code>y</code> is being referenced on lines 6 and 8.</p>
+<p><img alt="" src="../img/T01-name-binding-activity.png" /></p>
+</details>
+<h2 id="4-functions">4. Functions<a class="headerlink" href="#4-functions" title="Permanent link">&para;</a></h2>
+<p>A <em>function</em> gives a name to a <em>parameterized</em> sequence of statements. A
+<em>function definition</em> describes how a function behaves. A <em>function call</em>
+is a new kind of expression to execute a function. Note that all code in
+C programs are inside functions! Functions are sometimes called
+<em>procedures</em>, and they are the key to procedural programming. In this
+section, we will discuss the syntax of a function definition before
+discussing the syntax and semantics of a function call. We will explore
+several different examples of simple C programs that use functions, and
+we will conclude by introducing the <code>printf</code> function which can be used
+to print values to the screen.</p>
+<h3 id="41-function-definition">4.1. Function Definition<a class="headerlink" href="#41-function-definition" title="Permanent link">&para;</a></h3>
+<p>A <em>function definition</em> defines the sequence of statements that make up
+the function. The syntax for a function definition is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">rtype</span> <span class="nf">function_name</span><span class="p">(</span> <span class="n">ptype0</span> <span class="n">pname0</span><span class="p">,</span> <span class="n">ptype1</span> <span class="n">pname1</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">function_body</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <em>function name</em> is a unique identifier for the function. Function
+names must follow the same restrictions on identifiers as with variable
+names. The <em>function body</em> is the parameterized sequence of statements.
+The <em>parameter list</em> is a list of parameter types and names separated by
+commas (e.g., <code>ptype0 pname0</code> on line 1). Finally, the <em>return type</em> is
+the type of the value returned by the function (e.g., <code>rtype</code> on line 1).
+Note that we call just line 1 the <em>function prototype</em>. A function
+prototype specifies the <em>interface</em> for the function (i.e., name,
+parameter types, and return type) without specifying the actual
+implementation. An example function that returns the square of an integer
+is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int square( int x )
+{
+  int y = x * x;
+  return y;
+}
+</pre></div>
+</td></tr></table>
+
+<p>In this example, the function name is <code>square</code>, the function body
+consists of two statements, the parameter list includes one parameter
+named <code>x</code> of type <code>int</code>, and the return type is also <code>int</code>. Line 4 is a
+new kind of C statement called a <em>return statement</em>. A return statement
+first evaluates the given expression and then returns the corresponding
+value as the result of calling the function. Let's look at another
+example function.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int main()
+{
+  int a = 10;
+  int b = a * a;
+  return 0;
+}
+</pre></div>
+</td></tr></table>
+
+<p>This function does not take any parameters. The function named <code>main</code> is
+special. It is always the first function executed in a program. The
+<code>main</code> function returns its "value" to the "system", and this value is
+called the <em>exit status</em> of the program. On Linux, returning zero means
+success, and returning an integer greater than zero means failure.</p>
+<p>Note that in this <code>main</code> function we could refactor the expression on
+line 4 into the <code>square</code> function. This might make it easier to reuse a
+parameterized sequence of statements in many different places. Or it
+might be more effective to just directly calculate the square as shown.
+The art of determining how to refactor code into functions is a
+fundamental part of procedural programming.</p>
+<h3 id="42-function-call">4.2. Function Call<a class="headerlink" href="#42-function-call" title="Permanent link">&para;</a></h3>
+<p>A <em>function call</em> is a new kind of expression with new syntax and
+semantics that is used to execute the parameterized sequence of
+statements in a function definition. The syntax for a function call is
+shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">function_name</span><span class="p">(</span> <span class="n">pvalue0</span><span class="p">,</span> <span class="n">pvalue1</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>So to call a function we simply use its name and pass in one value for
+each parameter in the parameter list surrounded by parenthesis. If the
+parameters are themselves expressions, then we must evaluate these
+expressions <em>first</em> before calling the function. A function call is
+itself an expression which evaluates to the value returned by the
+function. Function parameters and "local" variables declared within a
+function body are effectively in a new block which is called the
+function's stack frame. Note that the value of each parameter is <em>copied</em>
+into these local variables. This is known as <em>call-by-value</em> semantics.
+We will learn about <em>call-by-pointer</em> and <em>call-by-reference</em> in later
+topics.</p>
+<p>The <em>caller</em> is the code which is calling the function, and the <em>callee</em>
+is the function which is being called. The precise semantics for calling
+a function are shown below.</p>
+<ol>
+<li>Evaluate parameters, allocate temporary
+     storage in caller's stack frame if necessary</li>
+<li>Allocate storage on caller's stack frame for the return value if necessary</li>
+<li>Allocate the callee's stack frame with space allocated for parameters</li>
+<li>Copy evaluated parameters from step 1 into callee's stack frame</li>
+<li>Record location of function call</li>
+<li>Move execution arrow to first statement in callee</li>
+<li>Evaluate statements inside the callee</li>
+<li>At return statement, evaluate its argument, update appropriate variable in caller</li>
+<li>Return execution arrow back to where function was called in caller</li>
+<li>Deallocate the callee's stack frame</li>
+</ol>
+<p>We will use several examples to illustrate these ten steps. Our first
+example illustrates a basic function call for the <code>square</code> function
+discussed in the previous section.</p>
+<p><img alt="" src="../img/T01-function-call-1.png" /></p>
+<p>As mentioned above, the program starts its execution with the special
+<code>main</code> function. The execution of lines 7-9 is as expected. Line 10 is a
+variable initialization statement, which means we first must allocate
+space on the stack for the new variable, and <em>then</em> we evaluate the RHS
+which in this case is a function call. Let's work through all ten steps
+involved in the function call semantics.</p>
+<p><strong>Step 1:</strong> There is a single parameter which is a variable name, and a
+variable name simply evaluates to the value stored in that variable.</p>
+<p><strong>Step 2:</strong> Because this function call is on the RHS of a variable
+initialization statement, there is no need to allocate any extra space on
+the caller's stack frame for the return value. We can directly write the
+return value into <code>b</code>.</p>
+<p><strong>Step 3:</strong> We allocate the callee's stack frame on the stack by drawing
+a nested box in the state diagram for the callee's stack frame. This box
+should be labeled with the name of the function. We also allocate space
+for each parameter. In this example, there is only one parameter so we
+allocate space for that parameter and label it appropriately in the state
+diagram.</p>
+<p><strong>Step 4:</strong> We initialize the parameters by copying the parameter value
+into the appropriate box in the callee's stack frame. In this example,
+this involves copying the value 3 into the box for <code>x</code> in the <code>square</code>
+functions stack frame.</p>
+<p><strong>Step 5:</strong> We record the location of the function call by drawing a
+unique number in a circle on the actual source code where the function is
+called and on the callee's stack frame. In this example, we label
+<code>square</code> on line 10 and the corresponding stack frame with the number 1.
+This information needs to be recorded in the stack so that we know where
+to return the execution arrow once the function call is complete.</p>
+<p><strong>Step 6:</strong> We move the execution arrow up to the function name. We
+indicate this on our state diagrams by entering a dot into the execution
+box next to the line where the function is called (i.e., line 10).
+<em>Every time we move our execution arrow backwards, we will shift marking
+execution boxes one column to the left.</em> Notice how we do mark the box on
+lines 1 and 2. This indicates the process of setting up the stack frame
+and opening the local scope of the function body.</p>
+<p><strong>Step 7:</strong> We evaluate the statements inside the callee. Notice how we
+allocate the local variable <code>y</code> on the callee's stack frame.</p>
+<p><strong>Step 8:</strong> At the return statement on line 4, we evaluate its argument
+(which is just the variable name <code>y</code> which evaluates to the value 9), and
+then we update the appropriate variable in the caller. In this example,
+this means updating the variable <code>b</code> in the caller.</p>
+<p><strong>Step 9:</strong> We move the execution arrow back to where the function was
+called in the caller. How do we know where the function was called? Step
+5 recorded the location of the function call in the stack frame. Notice
+how line 5 is <em>not</em> executed. The return statement immediately moves the
+execution arrow without executing any additional statements in the
+function body. <em>We will use a line every time we skip statements when
+moving our execution arrow forward.</em></p>
+<p><strong>Step 10:</strong> Finally, we deallocate the callee's stack frame by marking
+an X next to all variables allocated on the callee's stack frame and by
+also marking an X next to the name of the function.</p>
+<p>Once we have finished with all ten steps, then we can continue executing
+the statement where the function was called by substituting the return
+value for the actual function call. Notice how at the very top of the
+state diagram we have labeled the entire stack as <code>main</code>. This indicates
+that everything on the stack is essentially nested within the stack frame
+of the top-level <code>main</code> function.</p>
+<details class="question"><summary>Activity 8: State Diagram for a Simple Function Call</summary><p>Consider the following simple function to calculate whether or not a
+given parameter is odd. The function will return the value 1 if the
+parameter is odd and the value 0 if the parameter is even. Draw a
+state diagram corresponding to the execution of this program.
+Remember to use a dot to indicate a function call, to shift to the
+left one column when the execution arrow moves backwards, and to use
+a line to indicate skipping statements.</p>
+<p><img alt="" src="../img/T01-function-call-activity-1.png" /></p>
+</details>
+<p>Let's explore another example to illustrate call-by-value semantics.</p>
+<p><img alt="" src="../img/T01-function-call-2.png" /></p>
+<p>Notice that line 3 both reads and writes the variable named <code>x</code>. This is
+perfectly fine. Also notice that <code>x</code> is a parameter. Since C uses
+call-by-value semantics, this update to <code>x</code> <em>in no way</em> affects variables
+allocated on the callee's stack frame (e.g., <code>a</code> on the stack frame for
+<code>main</code>). Functions are free to modify their parameters since they contain
+a <em>copy</em> of the value passed in as a parameter.</p>
+<p>Let's explore another example to illustrate name binding.</p>
+<p><img alt="" src="../img/T01-function-call-3.png" /></p>
+<p>Notice that this C program includes two variables named <code>x</code> and two
+variables named <code>y</code>. Our name binding rules can help us determine which
+variable declaration corresponds to which variable name. Consider the
+read of <code>x</code> on line 10. This name must correspond to the variable
+declared on line 9 since that is the first variable declaration we find
+when working backwards. Now consider the read of <code>x</code> on line 3. This name
+must correspond to the variable declared on line 1 (i.e., the parameter).
+The variable named <code>y</code> on line 3 has absolutely nothing to do with the
+variable named <code>y</code> on line 10. Finally, consider the read of <code>x</code> on line
+4. This name must correspond to the variable declared on line 3 (i.e., a
+local variable in the local scope of the function body). The variable
+named <code>x</code> on line 4 has absolutely nothing to do with the variable named
+<code>x</code> on line 9. In general, we will try to avoid using the same variable
+names, but regardless we can always apply our name binding rules to
+unambiguously determine which variable declaration corresponds to which
+variable name.</p>
+<p>Let's explore another example to illustrate nested function calls.</p>
+<p><img alt="" src="../img/T01-function-call-4.png" /></p>
+<p>In this example, the <code>square</code> function calls the <code>mul</code> function to do the
+actual multiplication. Notice that the stack frame for the <code>mul</code> function
+is <em>nested</em> within the stack frame for the <code>square</code> function in the state
+diagram. We use a dot in the execution box to the left of line 16 and to
+the left of line 9 to indicate when each function is called. We shift
+marking execution boxes one column to the left each time we move our
+execution arrow backwards, and we use a line to indicate skipping
+statements when moving our execution arrow forward. We use unique numbers
+to mark where <code>square</code> and <code>mul</code> are called in the source code.</p>
+<p>Let's explore another example to illustrate the need for temporary
+storage on the stack when evaluating parameters.</p>
+<p><img alt="" src="../img/T01-function-call-5.png" /></p>
+<p>In this example, we use a non-trivial expression (<code>2 + 1</code>) as a parameter
+to the <code>square</code> function. In this situation, we need to allocate a
+temporary variable on the stack to hold the result of evaluating this
+expression. We will usually name these variables <code>TMP</code> on the stack. Once
+we have evaluated all parameters in step 1, then we can move on to step 2
+in the function call semantics.</p>
+<p>In our final example, we will explore calling a function whose parameter
+is the result of a function call.</p>
+<p><img alt="" src="../img/T01-function-call-6.png" /></p>
+<p>Notice that these two function calls are <em>not</em> nested. Step 1 of the
+function call semantics tells us we must evaluate all parameters. So we
+first complete all ten steps for the first function call before we start
+the ten steps for the second function call. As with the previous example,
+we allocate a temporary variable on the stack (<code>TMP</code>) to hold the result
+of the first function call. Then we can copy the value from <code>TMP</code> into
+the parameter in step 4 of the second function call. The execution boxes
+clearly indicate how the execution arrow moves through the program. We
+use two dots to the left of line 9 to indicate the two calls to the
+<code>square</code> function.</p>
+<details class="question"><summary>Activity 9: State Diagram for mul/odd Function Calls</summary><p>Consider the following program which includes two simple functions:
+one to calculate whether or not a given parameter is odd, and one to
+multiply to integers. Draw a state diagram corresponding to the
+execution of this program.</p>
+<p><img alt="" src="../img/T01-function-call-activity-2.png" /></p>
+</details>
+<details class="question"><summary>Activity 10: State Diagram for Multiple avg Function Calls</summary><p>Consider the following program which calls an <code>avg</code> function three
+different times. Draw a state diagram corresponding to the execution
+of this program. Recall that we must allocate space on the callers
+stack for a temporary value when evaluating non-trivial expressions
+passed as parameters to a function.</p>
+<p><img alt="" src="../img/T01-function-call-activity-3.png" /></p>
+</details>
+<h3 id="43-the-printf-function">4.3. The printf Function<a class="headerlink" href="#43-the-printf-function" title="Permanent link">&para;</a></h3>
+<p>The <code>printf</code> function is provided by the C standard library and can be
+used to print values to the screen. The pseudo-code for the <code>printf</code>
+function definition is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">printf</span><span class="p">(</span> <span class="n">format_string</span><span class="p">,</span> <span class="n">value0</span><span class="p">,</span> <span class="n">value1</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">substitute</span> <span class="n">value0</span> <span class="n">into</span> <span class="n">format_string</span>
+  <span class="n">substitute</span> <span class="n">value1</span> <span class="n">into</span> <span class="n">format_string</span>
+  <span class="p">...</span>
+  <span class="n">display</span> <span class="n">final</span> <span class="n">format_string</span> <span class="n">on</span> <span class="n">the</span> <span class="n">screen</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>An example of calling <code>printf</code> is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">square</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span> <span class="n">a</span> <span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;square of %d is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">);</span>
+  <span class="k">return</span>  <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>Line 1 uses the C preprocessor to import code from the standard library.
+Here we are importing the code in the <code>stdio.h</code> file which includes
+various functions for handling standard input from the screen and
+standard output to the screen. The actual call to <code>printf</code> is online 13.
+The format string includes various <em>format specifiers</em> as place holders
+for where to substitute the values. In this example we are using the <code>%d</code>
+format specifier to print an integer. Values are substituted based on
+their order. So the first value is substituted for the first <code>%d</code>, the
+second value is substituted for the second <code>$d</code>, and so on. <code>\n</code> is a
+special escape sequence that outputs a newline (i.e., line break). We
+will learn more about strings in Topic 5.</p>
+<p>We will be using two online tools to enable us to quickly experiment with
+small C programs. The first online tool is called Compiler Explorer:</p>
+<ul>
+<li><a href="https://godbolt.org">https://godbolt.org</a></li>
+</ul>
+<p>You can enter simple C functions in the left text box, and then Compiler
+Explorer will display the corresponding machine instructions (i.e.,
+assembly code) in the right text box. This is a great way to quickly use
+your browser to see the connection between C programs and the low-level
+computer hardware. Compiler Explorer color codes the C program and the
+machine instructions, so it is possible to see which C statements compile
+into which machine instructions. There is a drop-down menu to choose
+different compilers. There is also a text box where you can enter various
+compiler command line options. If you add the <code>-O3</code> command line option
+you will see the optimized machine instructions, while if you remove the
+<code>-O3</code> command line option you will see the unoptimized machine
+instructions. The unoptimized x86 machine instructions (i.e., without the
+<code>-O3</code> compiler option) for our <code>square</code> function are shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>square(int):
+  push rbp
+  mov  rbp, rsp
+  mov  DWORD PTR [rbp-20], edi
+  mov  eax, DWORD PTR [rbp-20]
+  imul eax, DWORD PTR [rbp-20]
+  mov  DWORD PTR [rbp-4], eax
+  mov  eax, DWORD PTR [rbp-4]
+  pop  rbp
+  ret
+</pre></div>
+</td></tr></table>
+
+<p>The optimized x86 machine instructions (i.e., with the <code>-O3</code> compiler
+option) for our <code>square</code> function are shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>square(int):
+  imul edi, edi
+  mov  eax, edi
+  ret
+</pre></div>
+</td></tr></table>
+
+<p>Even without knowing anything about the details of each machine
+instruction, it is clear that the compiler has been able to significantly
+optimize a way unnecessary work. Modern compilers are very sophisticated
+so it is important to avoid premature manual optimization at the C source
+code level. Develop your programs so they are elegant and easy to read.
+Let the compiler optimize as much as it can. Then evaluate your program
+and only if there is an issue in terms of performance and/or space usage
+should you start optimizing.</p>
+<p>The second online tool is called Repl.it:</p>
+<ul>
+<li><a href="https://repl.it">https://repl.it</a></li>
+</ul>
+<p>You can use Repl.it without an account. You can always create an account
+later. Click <em>new repl</em> in the upper right-hand corner. In the <em>Search
+for a language</em> drop-down choose C and the click <em>Create repl</em>. You will
+see a default program. Click <em>run</em>. This will compile and execute your C
+program in the cloud and then display the output on the right. This is a
+great way to quickly experiment with C programs in your browser. The
+output of running the program is shown in the right text box. A link to a
+repl.it for our <code>square</code> program is show below.</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-ex1">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-ex1</a></li>
+</ul>
+<details class="question"><summary>Activity 11: Write a Function to Increment by One</summary><p>Use Repl.it to develop a function that increments a given value by
+one. The function should take one parameter as shown below:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int increment( int x )
+</pre></div>
+</td></tr></table>
+
+<p>Here is an initial Repl.it to get you started.</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity1">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity1</a></li>
+</ul>
+</details>
+<h2 id="5-conditional-statements">5. Conditional Statements<a class="headerlink" href="#5-conditional-statements" title="Permanent link">&para;</a></h2>
+<p>A <em>conditional statement</em> enables programs to make decisions based on the
+values of their variables. Conditional statements enable <em>non-linear
+forward control flow</em> (i.e., the execution arrow will skip over
+statements). In this section, we will first discuss a new set of Boolean
+operators before discussing two kinds of conditional statements:
+<code>if/else</code> and <code>switch/case</code> statements.</p>
+<h3 id="51-boolean-operators">5.1. Boolean Operators<a class="headerlink" href="#51-boolean-operators" title="Permanent link">&para;</a></h3>
+<p>Boolean operators are used in expressions which evaluate to a "Boolean"
+value (i.e., true or false). C does not provide any built-in types for
+Boolean values as in many other programming languages. A "Boolean" value
+is just an integer, where we interpret a value of zero to mean false and
+an non-zero value to mean true. Nine Boolean operators are shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>expr1 == expr2</code></td>
+<td>tests if <code>expr1</code> is <strong>equal</strong> to <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>expr1 != expr2</code></td>
+<td>tests if <code>expr1</code> is <strong>not equal</strong> to <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>expr1 &lt;  expr2</code></td>
+<td>tests if <code>expr1</code> is <strong>less than</strong> to <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>expr1 &lt;= expr2</code></td>
+<td>tests if <code>expr1</code> is <strong>less than or equal</strong> to <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>expr1 &gt;  expr2</code></td>
+<td>tests if <code>expr1</code> is <strong>greater than</strong> to <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>expr1 &gt;= expr2</code></td>
+<td>tests if <code>expr1</code> is <strong>greater than or equal</strong> to <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>!expr</code></td>
+<td>computes the logical <strong>NOT</strong> of <code>expr</code></td>
+</tr>
+<tr>
+<td><code>expr1 &amp;&amp; expr2</code></td>
+<td>computes the logical <strong>AND</strong> of <code>expr1</code> and <code>expr2</code></td>
+</tr>
+<tr>
+<td><code>expr1 || expr2</code></td>
+<td>computes the logical <strong>OR</strong> of <code>expr1</code> and <code>expr2</code></td>
+</tr>
+</tbody>
+</table>
+<p>Using these operators in an expression evaluates to either zero (false)
+or one (true). As with all operators, we need to add the Boolean
+operators to the operator precedence table.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Operator</th>
+<th>Associativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unary</td>
+<td><code>!</code></td>
+<td>right to left</td>
+</tr>
+<tr>
+<td>Multiplicative</td>
+<td><code>*</code> <code>/</code> <code>%</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Additive</td>
+<td><code>+</code> <code>-</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Relational</td>
+<td><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Equality</td>
+<td><code>==</code> <code>!=</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Logical AND</td>
+<td><code>&amp;&amp;</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Logical OR</td>
+<td><code>||</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td><code>=</code></td>
+<td>right to left</td>
+</tr>
+</tbody>
+</table>
+<p>An example C program that uses Boolean operators is shown below.</p>
+<p><img alt="" src="../img/T01-boolean-operators.png" /></p>
+<p>The Boolean expression (<code>x &gt; 0</code>) evaluates to either a zero or one based
+on whether or not <code>x</code> is positive or negative.</p>
+<details class="question"><summary>Activity 12: Write a Function to Check Perfect Squares</summary><p>Use Repl.it to develop a function that takes two integer parameters
+and checks to see if one parameter is a perfect square of the other.
+The order should not matter. Only use arithmetic and Boolean
+operators. Do not use any conditional statements. The function
+prototype is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int is_perfect_square( int x, int y )
+</pre></div>
+</td></tr></table>
+
+<p>Here is an initial Repl.it to get you started.</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity2">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity2</a></li>
+</ul>
+</details>
+<h3 id="52-ifelse-conditional-statements">5.2. if/else Conditional Statements<a class="headerlink" href="#52-ifelse-conditional-statements" title="Permanent link">&para;</a></h3>
+<p><code>if/else</code> conditional statements are used to conditionally execute one of
+several statements based on one or more conditional expressions. The
+syntax for <code>if/else</code> conditional statements is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">conditional_expression</span> <span class="p">)</span>
+  <span class="n">then_statement</span><span class="p">;</span>
+<span class="k">else</span>
+  <span class="n">else_statement</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <em>conditional expression</em> is an expression that returns a Boolean. The
+<em>then statement</em> is executed if the conditional expression is true. The
+<em>else statement</em> is executed if the conditional expression is false.</p>
+<p><code>if/else</code> conditional statements can also include additional <code>if else</code>
+conditional expressions to create a "chain" of statements where exactly
+one is executed.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">conditional_expression0</span> <span class="p">)</span>
+  <span class="n">then_statement0</span><span class="p">;</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span> <span class="n">conditional_expression1</span> <span class="p">)</span>
+  <span class="n">then_statement1</span><span class="p">;</span>
+<span class="k">else</span>
+  <span class="n">else_statement</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Either the first then statement, the second then statement, or the else
+statement will be executed. Since blocks are just (compound) statements,
+the then and/or else statements can also be a blocks in which case the
+syntax is as follows.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">conditional_expression0</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="n">then_statement0</span><span class="p">;</span>
+  <span class="n">then_statement1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">conditional_expression1</span> <span class="p">{</span>
+  <span class="n">then_statement2</span><span class="p">;</span>
+  <span class="n">then_statement3</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="n">else_statement0</span><span class="p">;</span>
+  <span class="n">else_statement1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>An example C program that uses <code>if/else</code> conditional statements is shown
+below. This program includes an <code>abs</code> function to calculate the absolute
+value of the given integer parameter.</p>
+<p><img alt="" src="../img/T01-ifelse.png" /></p>
+<p>In this example, the conditional expression (<code>x &lt; 0</code>) is on line 4. The
+then statement is a block that starts with the open curly brace on line 4
+and ends with the close curly brace on line 6. The else statement is also
+a block. The execution boxes illustrate the non-linear control flow with
+each call to <code>abs</code> skipping some of the statements.</p>
+<details class="question"><summary>Activity 13: State Diagram for Function to Check Monoticity</summary><p>Consider the following function that takes three integer parameters
+and checks to see if these values are monotonically increasing or
+monotonically decreasing. The function will return the value 1 if the
+parameters are monotonic and will return the value 0 otherwise. Draw
+a state diagram corresponding to the execution of this program.</p>
+<p><img alt="" src="../img/T01-ifelse-activity.png" /></p>
+</details>
+<details class="question"><summary>Activity 14: Write Function to Find Median of Three</summary><p>Use Repl.it to develop a function that takes three integer parameters
+and returns the median. The function prototype is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int median( int x, int y, int z )
+</pre></div>
+</td></tr></table>
+
+<p>Here is an initial Repl.it to get you started. Try to minimize the
+number of Boolean operators. Can you implement this function with
+only five Boolean operators?</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity3">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity3</a></li>
+</ul>
+</details>
+<h3 id="53-switchcase-conditional-statements">5.3. switch/case Conditional Statements<a class="headerlink" href="#53-switchcase-conditional-statements" title="Permanent link">&para;</a></h3>
+<p><code>switch/case</code> conditional statements are used to conditionally execute
+one or more statements based a selection expression. The syntax for
+<code>switch/case</code> conditional statements is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="p">(</span> <span class="n">selection_expression</span> <span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">case</span> <span class="nl">case_label0</span><span class="p">:</span>
+    <span class="n">case_statement0</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+  <span class="k">case</span> <span class="nl">case_label1</span><span class="p">:</span>
+    <span class="n">case_statement1</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+  <span class="k">case</span> <span class="nl">case_label2</span><span class="p">:</span>
+    <span class="n">case_statement3</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+
+  <span class="k">default</span><span class="o">:</span>
+    <span class="n">default_statement</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <em>selection expression</em> is an expression which returns a value which
+is then compared against the <em>case labels</em>. If there is a match, then the
+corresponding <em>case statements</em> are executed. A <em>break</em> statement is used
+to jump to the end of the switch block. If no case labels match, then the
+<em>default statement</em> is executed. Note that there can be more than one
+case statement for a given case label without the need for a block. If we
+omit the break statement, then the execution "falls through" to the next
+case statement until we either execute a break statement or reach the end
+of the switch block</p>
+<p>An example C program that uses a <code>switch/case</code> conditional statement is
+shown below. This program includes a <code>days_in_month</code> function to
+determine how many days are in a given month. The month is specified as
+an integer between one and 12.</p>
+<p><img alt="" src="../img/T01-switchcase.png" /></p>
+<p>In this example, the selection expression (<code>month</code>) is on line 4. There
+are 12 case labels. Each case statement sets the variable <code>x</code>
+appropriately, and we include a break statement after each case
+statement. Notice that this example includes basic error checking. If the
+parameter is not between one and 12, then the value of the selection
+express will not match any of the 12 case labels. In this situation, we
+execute the default statement such that the function returns -1 to
+indicate an error. The <code>main</code> function checks this return value to
+determine if the program should exit with an exit status of 0 to indicate
+success or with an exit status of 1 to indicate an error.</p>
+<details class="question"><summary>Activity 15: State Diagram for Function to Calculate Days in Month</summary><p>Consider the following optimized implementation of the same
+<code>days_in_month</code> function from the previous example. This
+implementation uses "fall through" semantics. Draw a state diagram
+corresponding to the execution of this program.</p>
+<p><img alt="" src="../img/T01-switchcase-activity.png" /></p>
+</details>
+<details class="question"><summary>Activity 16: Write Function to Identify Small Primes</summary><p>Use Repl.it to develop a function that takes an integer parameter
+between 0 and 9 (inclusive) and returns a Boolean output. The
+function should return true if the input is prime (i.e., 2, 3, 5, 7)
+and return false if the input is not prime. Use a <code>switch/case</code>
+conditional statement to explicitly check for these prime values. The
+function prototype is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int is_prime( int x )
+</pre></div>
+</td></tr></table>
+
+<p>Here is an initial Repl.it to get you started.</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity4">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity4</a></li>
+</ul>
+</details>
+<h2 id="6-iteration-statements">6. Iteration Statements<a class="headerlink" href="#6-iteration-statements" title="Permanent link">&para;</a></h2>
+<p>An <em>iteration statement</em> enables programs to repeatedly execute a
+sequence of statements multiple times based on a conditional expression.
+Iteration statements enable <em>backward flow control</em> (i.e., the execution
+arrow will jump backwards). In this section, we will discuss two kinds of
+iteration statements: <code>while</code> loops and <code>for</code> loops.</p>
+<h3 id="61-while-loops">6.1. while Loops<a class="headerlink" href="#61-while-loops" title="Permanent link">&para;</a></h3>
+<p><code>while</code> loops are used to repeatedly execute a sequence of statements
+based on a data-dependent condition that might change during the
+execution of these statements. The syntax for <code>while</code> loops is shown
+below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span> <span class="n">conditional_expression</span> <span class="p">)</span>
+  <span class="n">loop_body</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <em>conditional expression</em> is an expression that returns a Boolean. The
+<em>loop body</em> is a statement which is executed as long as the conditional
+expression is true. Since blocks are just (compound) statements, the loop
+body can also be a block in which case the syntax is as follows.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="p">(</span> <span class="n">conditional_expression</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="n">loop_body</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>As an aside, an <em>infinite loop</em> is one in which the conditional
+expression is never false. Infinite loops must be avoided because they
+will cause your program to simply hang and never finish. Unfortunately,
+determining whether any given loop is an infinite loop is very difficult
+and indeed impossible in the general case.</p>
+<p>An example C program that uses a <code>while</code> loop is shown below. This
+program includes a <code>div</code> function that implements integer division
+through repeated subtraction.</p>
+<p><img alt="" src="../img/T01-while.png" /></p>
+<p>In this example, the conditional expression (<code>rem &gt;= y</code>) is on line 5.
+The loop body is a block that starts with the open curly brace on line 5
+and ends with the close curly brace on line 9. This example uses a
+temporary value (<code>t</code>) within the loop body. Notice how this variable is
+allocated at the beginning of the loop body and then deallocated at the
+end of the loop body which is why we see three different boxes named <code>t</code>
+in the state diagram. The execution boxes to the left of line 5 show that
+the conditional expression is executed four times. The final execution is
+when the conditional expression is the false and we skip over the loop
+body.</p>
+<details class="question"><summary>Activity 17: State Diagram for Function to Count Digits with while Loop</summary><p>Consider the following program which includes a function to count the
+number of decimal digits in a given parameter. This function uses a
+<code>while</code> loop. Draw a state diagram corresponding to the execution of
+this program.</p>
+<p><img alt="" src="../img/T01-while-activity.png" /></p>
+</details>
+<details class="question"><summary>Activity 18: Write Function to Output Sequence with while Loop</summary><p>Use Repl.it to develop a function that takes an integer parameter
+(<code>N</code>) and outputs a sequence according to the pattern below. The
+function should always return 0.</p>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>0 _</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>0 _ 2</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>0 _ 2 _</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>0 _ 2 _ 4</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>0 _ 2 _ 4 _</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>0 _ 2 _ 4 _ 5</code></td>
+</tr>
+</tbody>
+</table>
+<p>Basically the output is a sequence of integers with the odd integers
+replaced with an underscore (<code>_</code>). Use a <code>while</code> loop. The function
+prototype is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int print_seq( int x )
+</pre></div>
+</td></tr></table>
+
+<p>Here is an initial Repl.it to get you started.</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity5">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity5</a></li>
+</ul>
+</details>
+<h3 id="62-for-loops">6.2. for Loops<a class="headerlink" href="#62-for-loops" title="Permanent link">&para;</a></h3>
+<p><code>for</code> loops are used to repeatedly execute a sequence of statements in a
+similar fashion to <code>while</code> loops. The key difference is that <code>for</code> loops
+are structured so as to make iterating over a range of values relatively
+straight-forward. The syntax for <code>for</code> loops is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span> <span class="n">initialization_stmt</span><span class="p">;</span> <span class="n">cond_expr</span><span class="p">;</span> <span class="n">increment_stmt</span><span class="p">;</span> <span class="p">)</span>
+  <span class="n">loop_body</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <em>initialization statement</em> is executed once before the loop body
+executes. The <em>conditional expression</em> is an expression which returns a
+Boolean value. The <em>loop body</em> is a statement which is executed as long
+as the conditional expression is true. The <em>increment statement</em> is
+executed at the end of each iteration (i.e., after executing the loop
+body, but before evaluating the conditional expression). As with <code>while</code>
+loops, since blocks are just (compound) statements, the loop body can
+also be a block in which case the syntax is as follows.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span> <span class="n">initialization_stmt</span><span class="p">;</span> <span class="n">cond_expr</span><span class="p">;</span> <span class="n">increment_stmt</span><span class="p">;</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="n">loop_body</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>An example C program that uses a <code>for</code> loop is shown below. This program
+includes a <code>mul</code> function that implements integer multiplication through
+repeated addition.</p>
+<p><img alt="" src="../img/T01-for.png" /></p>
+<p>In this example, the initialization statement (<code>int i=0</code>), the
+conditional expression (<code>i&lt;y</code>), and the increment statement (<code>i=i+1</code>) are
+all on line 4. The loop body is a single statement on line 5. The
+execution boxes to the left of line 5 show that parts of this line are
+executed four times. Let's step through the execution of this line in
+more detail. The very first time we consider line 4, we execute the
+initialization statement. The initialization statement is executed
+exactly once. Any variables declared in the initialization statement are
+only in scope during the execution of the loop, and they are deallocated
+when the loop is finished. So in this example, the variable <code>i</code> is only
+in scope (i.e., accessible) during the loop execution and it is
+deallocated when we reach line 6. The conditional expression is evaluated
+at the <em>beginning</em> of each loop iteration, and the increment statement is
+executed at the <em>end</em> of each loop iteration. So the very first time we
+consider line 4, we execute the initialization statement and then we
+evaluate the conditional expression, which in this case is true meaning
+we execute the loop body at least once. After executing the loop body we
+execute the increment statement, which in this case increments the
+variable <code>i</code>. We continue executing the loop body two more times. The
+fourth time we consider line 4, the conditional expression will be false
+and we skip over the loop body. So in summary, the initialization
+statement is executed once, the conditional expression is evaluated four
+times, and the increment statement is executed three times.</p>
+<details class="question"><summary>Activity 18: State Diagram for Function to Count Digits with for Loop</summary><p>Consider the following program which includes a function to count the
+number of decimal digits in a given parameter. This function uses a
+<code>for</code> loop. Draw a state diagram corresponding to the execution of
+this program.</p>
+<p><img alt="" src="../img/T01-for-activity.png" /></p>
+</details>
+<details class="question"><summary>Activity 19: Write Function to Output Sequence with for Loop</summary><p>Use Repl.it to develop a function that takes an integer parameter
+(<code>N</code>) and outputs a sequence according to the pattern below. The
+function should always return 0.</p>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>0 _</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>0 _ 2</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>0 _ 2 _</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>0 _ 2 _ 4</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>0 _ 2 _ 4 _</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>0 _ 2 _ 4 _ 5</code></td>
+</tr>
+</tbody>
+</table>
+<p>Basically the output is a sequence of integers with the odd integers
+replaced with an underscore (<code>_</code>). Use a <code>for</code> loop. The function
+prototype is shown below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int print_seq( int x )
+</pre></div>
+</td></tr></table>
+
+<p>Here is an initial Repl.it to get you started.</p>
+<ul>
+<li><a href="https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity5">https://repl.it/@cbatten/SFU-CMPT-431-T01-notes-activity5</a></li>
+</ul>
+</details>
+<h2 id="7-syntactic-sugar">7. Syntactic Sugar<a class="headerlink" href="#7-syntactic-sugar" title="Permanent link">&para;</a></h2>
+<p>Syntactic sugar adds new syntax but not new semantics. We can explain what
+a given piece of syntactic sugar means by simple showing how to transform
+the sugar into equivalent but previously designed syntax. Syntactic sugar
+simplifies certain programming patterns, but again does not introduce any
+fundamentally new behavior.</p>
+<p><code>for</code> loops are actually just syntactic sugar for a specific common use
+case of <code>while</code> loops. The following two loops are equivalent.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>for ( int i = 0; i &lt; y; i = i+1 ) {
+  z = z + x;
+}
+
+{
+  int i = 0;         // initialization statement
+  while ( i &lt; y ) {  // conditional expression
+    z = z + x;
+    i = i + 1;       // increment statement
+  }
+}
+</pre></div>
+</td></tr></table>
+
+<p>This equivalence should clarify some of our earlier discussion. The
+initialization statement on line 6 is executed exactly once before
+starting the execution of the loop. The conditional expression is
+evaluated before executing the loop body, and the increment statement is
+executed at the end of each iteration (before we evaluate the conditional
+expression for the next iteration).</p>
+<p>C provides several assignment operators that are just syntactic sugar for
+common programming patterns.</p>
+<table>
+<thead>
+<tr>
+<th>Sugar</th>
+<th>Equivalent Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x += y</code></td>
+<td><code>x = x + y</code></td>
+</tr>
+<tr>
+<td><code>x -= y</code></td>
+<td><code>x = x - y</code></td>
+</tr>
+<tr>
+<td><code>x *= y</code></td>
+<td><code>x = x * y</code></td>
+</tr>
+<tr>
+<td><code>x /= y</code></td>
+<td><code>x = x / y</code></td>
+</tr>
+</tbody>
+</table>
+<p>C also provides postfix and prefix operators that are useful for
+incrementing and decrementing variables.</p>
+<table>
+<thead>
+<tr>
+<th>Sugar</th>
+<th>Equivalent Syntax</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x++</code></td>
+<td><code>x = x + 1</code></td>
+<td><code>x</code></td>
+</tr>
+<tr>
+<td><code>++x</code></td>
+<td><code>x = x + 1</code></td>
+<td><code>x + 1</code></td>
+</tr>
+<tr>
+<td><code>x--</code></td>
+<td><code>x = x - 1</code></td>
+<td><code>x</code></td>
+</tr>
+<tr>
+<td><code>--x</code></td>
+<td><code>x = x - 1</code></td>
+<td><code>x - 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The difference between the postfix versions (<code>x++</code>) and the prefix
+versions (<code>++x</code>) has to do with how these expressions are evaluated. The
+<em>value</em> of <code>x++</code> is <code>x</code>, but the <em>value</em> of <code>++x</code> is <code>x + 1</code>. For
+example, consider the following simple program which uses a postfix
+operator.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int i = 1;
+int j = i++;
+</pre></div>
+</td></tr></table>
+
+<p>After executing these two statements, the value of <code>i</code> will be 2 and the
+value of <code>j</code> will be 1. Now consider the following simple program which
+uses a prefix operator.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int i = 1;
+int j = ++i;
+</pre></div>
+</td></tr></table>
+
+<p>After executing these two statements, the value of <code>i</code> will be 2 and the
+value of <code>j</code> will also be 2.</p>
+<p>C provides a compact way to write <code>if/else</code> statements using the ternary
+operator. The syntax for the ternary operator is as follows.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">(</span> <span class="n">conditional_expression</span> <span class="p">)</span> <span class="o">?</span> <span class="nl">then_expression</span> <span class="p">:</span> <span class="n">else_expression</span>
+</pre></div>
+</td></tr></table>
+
+<p>Thus the following two functions are equivalent.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>int min( int x, int y )
+{
+  if ( x &lt; y )
+    return x;
+  return y;
+}
+
+int min( int x, int y )
+{
+  return ( x &lt; y ) ? x : y;
+}
+</pre></div>
+</td></tr></table>
+
+<p>We have now introduce several new operators, so we need to update our
+operator precedence table.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Operator</th>
+<th>Associativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Postfix</td>
+<td><code>a++</code> <code>a--</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Unary</td>
+<td><code>!</code> <code>++a</code> <code>--a</code></td>
+<td>right to left</td>
+</tr>
+<tr>
+<td>Multiplicative</td>
+<td><code>*</code> <code>/</code> <code>%</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Additive</td>
+<td><code>+</code> <code>-</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Relational</td>
+<td><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Equality</td>
+<td><code>==</code> <code>!=</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Logical AND</td>
+<td><code>&amp;&amp;</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Logical OR</td>
+<td><code>||</code></td>
+<td>left to right</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>a?b:c</code></td>
+<td>right to left</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="../SFU-CMPT-431-sec1-linux/" title="Section 1: Linux Development Environment" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Section 1: Linux Development Environment
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright for original site &copy; 2018 Christopher Batten
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extras.js"></script>
+      
+    
+  </body>
+</html>
